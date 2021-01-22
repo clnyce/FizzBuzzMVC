@@ -1,0 +1,30 @@
+﻿@model FizzBuzzer
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4" style="color: blue">Fizz Buzz</h1>
+    <p style="color: blue">Fizz Buzz...input two numbers to find multiples of them among 1-100</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form asp-controller="Home" asp-action="Index">
+                <div class="form-group">
+                    <label asp-for="NumFizz" class="control-label" style="color: blue"></label>
+                    <input asp-for="NumFizz" class="form-control" />
+                    <span asp-validation-for="NumFizz" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumBuzz" class="control-label" style="color: blue"></label>
+                    <input asp-for="NumBuzz" class="form-control" />
+                    <span asp-validation-for="NumBuzz" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <h4>@Html.Raw(Model.FizzBuzz)</h4>
+        </div>
+    </div>
+</div>
